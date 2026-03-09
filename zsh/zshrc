@@ -1,0 +1,46 @@
+# enable fzf features
+source <(fzf --zsh)
+
+# In progress command to run cmus in the background. if already running does not move to background.
+tmux new -Ascmus -- "tmux detach && cmus"
+
+# load colors
+autoload -U colors && colors
+
+# pretty self explanatory names
+setopt interactive_comments
+setopt autocd
+# custom prompt
+setopt PROMPT_SUBST
+PROMPT='%{$fg[green]%}%t %{$reset_color%}- %B%{$fg[blue]%}%n %b%{$reset_color%}- %{$fg[cyan]%}%~
+%{$reset_color%}  '
+
+# aliases
+alias man="batman" # make syntax highlighted nicely
+alias ls="ls -G -p" # make syntax highlighted nicely and add / to end of folder names
+alias rustman="man -M ~/rustman" # custom man directory. has the rust book in a man page.
+alias edconf="vim ~/.config/zsh/zshrc && source ~/.zshrc" # edit this file
+alias mt="cmus-remote -u -Q | grep file" # cmus remote aliases
+alias mn="cmus-remote -n -Q | grep file" # cmus remote aliases
+alias mb="cmus-remote -r -Q | grep file" # cmus remote aliases
+alias cr="cmus-remote" # cmus remote aliases
+
+# name and clear function. clears then writes name
+simon() {
+    clear
+    echo "$fg[red]███████╗$fg[blue]██╗$fg[magenta]███╗   ███╗$fg[cyan] ██████╗ $fg[green]███╗   ██╗";
+    echo "$fg[red]██╔════╝$fg[blue]██║$fg[magenta]████╗ ████║$fg[cyan]██╔═══██╗$fg[green]████╗  ██║";
+    echo "$fg[red]███████╗$fg[blue]██║$fg[magenta]██╔████╔██║$fg[cyan]██║   ██║$fg[green]██╔██╗ ██║";
+    echo "$fg[red]╚════██║$fg[blue]██║$fg[magenta]██║╚██╔╝██║$fg[cyan]██║   ██║$fg[green]██║╚██╗██║";
+    echo "$fg[red]███████║$fg[blue]██║$fg[magenta]██║ ╚═╝ ██║$fg[cyan]╚██████╔╝$fg[green]██║ ╚████║";
+    echo "$fg[red]╚══════╝$fg[blue]╚═╝$fg[magenta]╚═╝     ╚═╝$fg[cyan] ╚═════╝ $fg[green]╚═╝  ╚═══╝";
+}
+alias clear="simon"
+# lesspipe stuffz
+PATH=$PATH:~/bin
+fpath=$fpath:~/.fpath
+lesspipe.sh | source /dev/stdin
+# fast syntax highlighting
+source ~/FastSyntaxHighlighting/fast-syntax-highlighting.plugin.zsh
+# run name function
+clear
