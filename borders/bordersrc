@@ -1,11 +1,13 @@
 #!/bin/bash
+source ~/.config/colors.sh
 
 options=(
 	style=round
 	width=8.5
 	hidpi=off
-	active_color=0xffcba6f7
-	inactive_color=0xff313244
+	active_color=0xff"$ACCENT"
+	inactive_color=0xff"$SURFACE"
+    order=above
 )
 
 borders "${options[@]}"

@@ -2,6 +2,7 @@
 # It is meant to be changed and configured, as it is intentionally kept sparse.
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
+source ~/.config/colors.sh
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
@@ -24,20 +25,21 @@ default=(
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffcdd6f4
-  label.color=0xffcdd6f4
+  icon.color=0xff"$TEXT"
+  label.color=0xff"$TEXT"
   icon.padding_left=7
   icon.padding_right=4
   label.padding_left=4
   label.padding_right=7
   background.blur_radius=30
-  background.color=0xff1e1e2e
+  background.color=0xff"$BG"
   background.corner_radius=7
   background.height=20
-  background.border_color=0xffcba6f7
+  background.border_color=0xff"$ACCENT"
   background.border_width=1
 )
 sketchybar --default "${default[@]}"
+
 
 
 ##### Adding Left Items #####
@@ -72,6 +74,7 @@ sketchybar --add item clock right \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
+
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
