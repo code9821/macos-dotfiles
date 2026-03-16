@@ -55,7 +55,7 @@ sketchybar --default "${default[@]}"
 sketchybar --add item front_app left \
            --set front_app icon= script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
-##### Adding Right Items #####
+
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
@@ -75,6 +75,8 @@ sketchybar --add item clock right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
+sketchybar -m --add item mpd right \
+              --set mpd update_freq=2 \
+              --set mpd script="~/.config/sketchybar/plugins/mpd.sh"
 
-##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

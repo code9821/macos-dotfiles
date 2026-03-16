@@ -1,9 +1,6 @@
 # enable fzf features
 source <(fzf --zsh)
 
-# In progress command to run cmus in the background. if already running does not move to background.
-tmux new -Ascmus -- "tmux detach && cmus"
-
 # load colors
 autoload -U colors && colors
 
@@ -22,6 +19,7 @@ alias rustman="man -M ~/rustman" # custom man directory. has the rust book in a 
 alias edconf="vim ~/.config/zsh/zshrc && source ~/.zshrc" # edit this file
 alias sedconf="vim ~/.config/sketchybar/sketchybarrc && brew services restart sketchybar" # sketchybar config edit
 alias bedconf="vim ~/.config/borders/bordersrc && brew services restart borders" # borders config edit
+alias edcolor="vim ~/.config/colors.sh && brew services restart sketchybar && brew services restart borders" # color edit
 alias aedconf="vim ~/.config/aerospace/aerospace.toml && aerospace reload-config" # aerospace config edit
 alias mt="cmus-remote -u -Q | grep file" # cmus remote aliases
 alias mn="cmus-remote -n -Q | grep file" # cmus remote aliases

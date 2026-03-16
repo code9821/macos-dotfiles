@@ -1,3 +1,6 @@
+let g:ctrlp_extensions = ['mpc']
+" Sheer awesomeness
+
 set rtp+=/opt/homebrew/opt/fzf
 let g:ale_linters = {'rust': ['analyzer']}
 " Initialize configuration dictionary
@@ -28,6 +31,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set scrolloff=15
 let mapleader = "'"
 
+nnoremap <Leader>m :CtrlPMpc<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s <C-W><C-W>
 nnoremap <leader>q :wq<CR>
@@ -71,12 +75,12 @@ let g:airline_powerline_fonts = 1
 
 let g:airline_section_c_only_filename = 1
 
-function! GetMusic()
-  redir => message
-  silent execute "CmusCurrent"
-  redir END
-  return message[1:-1]
-endfunction
-let g:airline_section_y = '%-0.70{GetMusic()}'
+"function! GetMusic()
+"  redir => message
+"  silent execute "CmusCurrent"
+"  redir END
+"  return message[1:-1]
+"endfunction
+"let g:airline_section_y = '%-0.70{GetMusic()}'
 "let g:airline_section_b = 'wahoo'
 let g:airline#extensions#battery#enabled = 1

@@ -46,7 +46,7 @@ automatically-unhide-macos-hidden-apps = true
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -71,13 +71,36 @@ on-mode-changed = []
     inner.vertical =   25
     outer.left =       35
     outer.bottom =     35
-    outer.top =        35
-    outer.right =      35
+#    outer.top =        35
+    outer.top = [{ monitor.".*Built-in.*" = 35 }, 75]
+outer.right =      35
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
+[workspace-to-monitor-force-assignment]
+
+1 = 'main'
+
+2 = 'main'
+
+3 = 'main'
+
+4 = 'main'
+
+5 = 'main'
+
+6 = ['secondary', 'main']
+
+7 = ['secondary', 'main']
+
+8 = ['secondary', 'main']
+
+9 = ['secondary', 'main']
+
+10 = ['secondary', 'main']
+
 [mode.main.binding]
 
     # All possible keys:
@@ -107,12 +130,13 @@ on-mode-changed = []
 #    end tell'
 #    '''
     alt-f = "fullscreen"
-    cmd-alt-ctrl-d = '''exec-and-forget osascript -e '
-    tell application "iTerm"
-        create window with default profile
-    end tell'
-    '''
+#    cmd-alt-ctrl-d = '''exec-and-forget osascript -e '
+#    tell application "iTerm"
+#        create window with default profile
+#    end tell'
+#    '''
     cmd-alt-ctrl-f = "exec-and-forget open -n -a qutebrowser"
+    cmd-alt-ctrl-d = "exec-and-forget open -n -a iTerm"
     cmd-alt-ctrl-s = "exec-and-forget open -n -a Reminders"
     cmd-alt-ctrl-j = "exec-and-forget open -n -a Messages"
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
