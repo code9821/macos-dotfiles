@@ -6,7 +6,14 @@ if [ $(mpc status | wc -l | tr -d ' ') == "1" ]; then
 else
   artist=$(mpc current -f %artist%)
   song=$(mpc current -f %title%)
-  icon=""
+
+  status=$(mpc status 2>/dev/null | awk         'NR==2{print $1}')
+  if [ $status = "[playing]" ]; then
+    icon=""
+  else
+    icon=""
+  fi
+#  icon=""
   output="${artist} • ${song}"
 fi
 

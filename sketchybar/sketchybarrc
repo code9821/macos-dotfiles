@@ -75,7 +75,7 @@ sketchybar --add item clock right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
-sketchybar -m --add item mpd right \
+sketchybar -m --add item mpd left \
               --set mpd update_freq=2 \
               --set mpd script="~/.config/sketchybar/plugins/mpd.sh"
 
