@@ -1,4 +1,7 @@
 # MacOS Dotfiles
-My personal dotfiles for vim, aerospace, borders, bat, sketchybar, zsh, and sketchyvim
+My personal dotfiles.
+
+Preview: (may be outdated)
+![Dotfiles Preview](./Dotfiles-Screenshot.png)
 
 Sketchyvim config is incomplete.
