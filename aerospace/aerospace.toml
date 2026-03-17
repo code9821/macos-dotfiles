@@ -149,6 +149,9 @@ outer.right =      35
     alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
     alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
 
+    cmd-alt-ctrl-space = "exec-and-forget mpc toggle"
+    cmd-alt-ctrl-b = "exec-and-forget mpc prev"
+    cmd-alt-ctrl-n = "exec-and-forget mpc next"
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
     alt-shift-j = 'move down'
