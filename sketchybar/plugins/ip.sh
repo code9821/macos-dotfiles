@@ -1,0 +1,24 @@
+#!/bin/sh
+
+source "$HOME/.config/colors.sh" # Loads all defined colors
+
+IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
+IS_VPN=$(scutil --nwi | grep -m1 'utun' | awk '{ print $1 }')
+
+if [[ $IS_VPN != "" ]]; then
+	COLOR=0xff$CYAN
+	ICON=
+	LABEL="VPN"
+elif [[ $IP_ADDRESS != "" ]]; then
+	COLOR=0xff$BLUE
+	ICON=
+	LABEL=$IP_ADDRESS
+else
+	COLOR=0xff$TEXT
+	ICON=
+	LABEL="Not Connected"
+fi
+
+sketchybar --set $NAME icon.color=$COLOR \
+	icon=$ICON \
+	label="$LABEL"
