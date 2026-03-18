@@ -10,7 +10,7 @@ if [[ $IS_VPN != "" ]]; then
 	ICON=
 	LABEL="VPN"
 elif [[ $IP_ADDRESS != "" ]]; then
-	COLOR=0xff$BLUE
+	COLOR=0xff$GREEN
 	ICON=
 	LABEL=$IP_ADDRESS
 else
