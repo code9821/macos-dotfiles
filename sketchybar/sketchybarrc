@@ -84,4 +84,11 @@ sketchybar --add item  ip_address right                              \
                                   update_freq=30                     \
            --subscribe ip_address wifi_change                        \
 
+sketchybar -m --add       event              bluetooth_change "com.apple.bluetooth.status"     \
+                                                                                               \
+              --add       item headphones    left                                              \
+              --set       headphones         icon=""  label="Connected"                       \
+                                             script="$PLUGIN_DIR/headphones.sh"                \
+              --subscribe headphones         bluetooth_change
+
 sketchybar --update
