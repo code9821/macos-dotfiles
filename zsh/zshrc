@@ -12,6 +12,8 @@ setopt PROMPT_SUBST
 PROMPT='%{$fg[green]%}%t %{$reset_color%}- %B%{$fg[blue]%}%n %b%{$reset_color%}- %{$fg[cyan]%}%~
 %{$reset_color%}  '
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # aliases
 alias man="batman" # make syntax highlighted nicely
 alias ls="ls -G -p" # make syntax highlighted nicely and add / to end of folder names
@@ -25,7 +27,7 @@ alias mt="cmus-remote -u -Q | grep file" # cmus remote aliases
 alias mn="cmus-remote -n -Q | grep file" # cmus remote aliases
 alias mb="cmus-remote -r -Q | grep file" # cmus remote aliases
 alias cr="cmus-remote" # cmus remote aliases
-
+alias steam='wine "/Users/simonbowering/.wine/drive_c/Program Files (x86)/Steam/steam.exe"' #launch steam in wine
 # name and clear function. clears then writes name
 simon() {
     clear

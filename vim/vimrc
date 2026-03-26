@@ -7,6 +7,7 @@ let g:ale_linters = {'rust': ['analyzer']}
 let g:fzf_vim = {}
 let g:fzf_vim.command_prefix = 'Fzf'
 
+set clipboard=unnamed
 set nocompatible
 filetype on
 filetype plugin on

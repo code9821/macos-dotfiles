@@ -139,6 +139,9 @@ outer.right =      35
     cmd-alt-ctrl-d = "exec-and-forget open -n -a iTerm"
     cmd-alt-ctrl-s = "exec-and-forget open -n -a Reminders"
     cmd-alt-ctrl-j = "exec-and-forget open -n -a Messages"
+    cmd-alt-ctrl-k = "exec-and-forget open -n -a Element"
+    cmd-alt-ctrl-l = "exec-and-forget open -n -a Slack"
+    cmd-alt-ctrl-semicolon = "exec-and-forget open -n -a kitty"
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'

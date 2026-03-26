@@ -6,6 +6,7 @@ source ~/.config/colors.sh
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:
@@ -21,8 +22,8 @@ sketchybar --bar position=top height=40 blur_radius=0 color=0x00000000
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=5
-  padding_right=5
+  padding_left=4
+  padding_right=4
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
   icon.color=0xff"$TEXT"
@@ -33,7 +34,7 @@ default=(
   label.padding_right=9
   background.blur_radius=0
   background.color=0xff"$BG"
-  background.corner_radius=12
+  background.corner_radius=9
   background.height=25
   background.border_color=0xff"$ACCENT"
   background.border_width=2
@@ -90,5 +91,16 @@ sketchybar -m --add       event              bluetooth_change "com.apple.bluetoo
               --set       headphones         icon=""  label="Connected"                       \
                                              script="$PLUGIN_DIR/headphones.sh"                \
               --subscribe headphones         bluetooth_change
+
+
+sketchybar --add item svim.mode right \
+           --set svim.mode popup.align=right \
+                           icon.padding_right=12 \
+                           icon.padding_left=9 \
+                           label.drawing=off \
+                           script="sketchybar --set svim.mode popup.drawing=off" \
+           --subscribe svim.mode front_app_switched window_focus \
+           --add item svim.cmdline popup.svim.mode \
+           --set svim.cmdline icon="Command: "
 
 sketchybar --update
