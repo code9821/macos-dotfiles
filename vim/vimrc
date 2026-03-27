@@ -38,11 +38,6 @@ nnoremap <leader>s <C-W><C-W>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>e :q<CR>
 
-nnoremap jf :CmusPlay<CR>
-nnoremap fj :CmusPause<CR>
-nnoremap ff :CmusNext<CR>
-nnoremap jj :CmusCurrent<CR>  
-
 inoremap jh <Esc>
 
 set termguicolors

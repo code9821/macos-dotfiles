@@ -17,6 +17,7 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # aliases
 alias man="batman" # make syntax highlighted nicely
 alias ls="ls -G -p" # make syntax highlighted nicely and add / to end of folder names
+alias eza="eza --icons=always" # eza icons always on
 alias rustman="man -M ~/rustman" # custom man directory. has the rust book in a man page.
 alias edconf="vim ~/.config/zsh/zshrc && source ~/.zshrc" # edit this file
 alias sedconf="vim ~/.config/sketchybar/sketchybarrc && brew services restart sketchybar" # sketchybar config edit
