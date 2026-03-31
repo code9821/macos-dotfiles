@@ -15,6 +15,8 @@ PROMPT='%{$fg[green]%}%t %{$reset_color%}- %B%{$fg[blue]%}%n %b%{$reset_color%}-
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # aliases
+alias mpv="mpv --vo=tct --profile=sw-fast --really-quiet" # make mpv play in terminal by default
+alias search="w3m start.duckduckgo.com" # make search go to duckduckgo. TODO: make function that accepts arguments
 alias man="batman" # make syntax highlighted nicely
 alias ls="ls -G -p" # make syntax highlighted nicely and add / to end of folder names
 alias eza="eza --icons=always" # eza icons always on
@@ -24,10 +26,6 @@ alias sedconf="vim ~/.config/sketchybar/sketchybarrc && brew services restart sk
 alias bedconf="vim ~/.config/borders/bordersrc && brew services restart borders" # borders config edit
 alias edcolor="vim ~/.config/colors.sh && brew services restart sketchybar && brew services restart borders" # color edit
 alias aedconf="vim ~/.config/aerospace/aerospace.toml && aerospace reload-config" # aerospace config edit
-alias mt="cmus-remote -u -Q | grep file" # cmus remote aliases
-alias mn="cmus-remote -n -Q | grep file" # cmus remote aliases
-alias mb="cmus-remote -r -Q | grep file" # cmus remote aliases
-alias cr="cmus-remote" # cmus remote aliases
 alias steam='wine "/Users/simonbowering/.wine/drive_c/Program Files (x86)/Steam/steam.exe"' #launch steam in wine
 # name and clear function. clears then writes name
 simon() {
