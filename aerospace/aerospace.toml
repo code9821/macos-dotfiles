@@ -143,6 +143,7 @@ outer.right =      35
     cmd-alt-ctrl-l = "exec-and-forget open -n -a Slack"
     cmd-alt-ctrl-semicolon = "exec-and-forget open -n -a kitty"
     cmd-alt-ctrl-q = "exec-and-forget kitten quick-access-terminal"
+    cmd-alt-ctrl-w = "exec-and-forget kitten quick-access-terminal -o kitty_override=font_size=16 -o columns=30 -o rows=4 -o edge=center-sized 'launcher'"
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'

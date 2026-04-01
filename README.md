@@ -1,4 +1,4 @@
-# MacOS Dotfiles
-My personal dotfiles.
+MacOS Dotfiles
+==============
 
-Sketchyvim config is incomplete.
+My dotfiles.
